@@ -87,32 +87,46 @@ Resources:
             Version: '2012-10-17'
             Statement:
               - Action:
-                  - mq:DescribeBroker
                   - apigateway:GET
+                  - cloudwatch:ListTagsForResource
                   - cognito-identity:ListTagsForResource
                   - cognito-idp:ListTagsForResource
+                  - ds:ListTagsForResource
+                  - dynamodb:ListTagsOfResource
                   - ecr:DescribeImages
                   - ecr:GetLifecyclePolicy
-                  - directconnect:DescribeDirectConnectGateways
+                  - ecr:ListTagsForResource
+                  - eks:ListTagsForResource
                   - elasticbeanstalk:ListTagsForResource
                   - elasticfilesystem:DescribeTags
+                  - elasticache:ListTagsForResource
+                  - es:ListTags
                   - glacier:GetVaultLock
                   - glacier:ListTagsForVault
+                  - glue:GetConnections
                   - glue:GetSecurityConfigurations
                   - logs:GetLogEvents
                   - mq:listBrokers
                   - mq:describeBroker
                   - ram:GetResourceShares
-                  - secretsmanager:DescribeSecret
                   - ssm:GetParameters
                   - ssm:ListTagsForResource
                   - sqs:SendMessage
                   - elasticmapreduce:ListSecurityConfigurations
+                  - elasticmapreduce:GetBlockPublicAccessConfiguration
                   - sns:listSubscriptions
+                  - sns:ListTagsForResource
+                  - sns:ListPlatformApplications
                   - wafv2:ListResourcesForWebACL
                   - wafv2:ListWebACLs
+                  - wafv2:ListTagsForResource
+                  - wafv2:GetWebACL
+                  - wafv2:GetLoggingConfiguration
+                  - waf:GetWebACL
+                  - waf:ListTagsForResource
+                  - waf:GetLoggingConfiguration
                   - waf-regional:ListResourcesForWebACL
-                  - waf-regional:ListWebACLs-  
+                  - waf-regional:ListTagsForResource                  -                   
                 Effect: Allow
                 Resource: '*'
       RoleName: !Ref 'PrismaRoleName'
